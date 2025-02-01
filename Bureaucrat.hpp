@@ -13,9 +13,13 @@ class Bureaucrat
 		int _grade;
 	public:
 		Bureaucrat();
+		Bureaucrat(const std::string _name, int grade);
 		Bureaucrat(const Bureaucrat &bureaucrat);
 		Bureaucrat &operator=(const Bureaucrat &bureaucrat);
 		~Bureaucrat();
+
+		int GradeTooHighException();
+		int GradeTooLowException(); 
 
 } ;
 
