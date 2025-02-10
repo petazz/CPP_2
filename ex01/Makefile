@@ -1,6 +1,6 @@
 TARGET = Bureaucrat
 
-SRCS = Bureaucrat.cpp
+SRCS = Bureaucrat.cpp main.cpp Form.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

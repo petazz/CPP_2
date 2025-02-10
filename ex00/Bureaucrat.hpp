@@ -30,6 +30,8 @@ class Bureaucrat
 
 		int getGrade() const;
 		std::string getName() const;
+		void incrementGrade();
+		void decrementGrade();
 
 } ;
 
