@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
+#include <fstream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 

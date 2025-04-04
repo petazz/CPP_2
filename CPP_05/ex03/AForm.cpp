@@ -74,6 +74,11 @@ int AForm::getExecuteGrade() const
 	return this->_executeGrade;
 }
 
+bool AForm::getIsSigned() const
+{
+	return this->_sign;
+}
+
 void AForm::beSigned(Bureaucrat &bureaucrat)
 {
 	try

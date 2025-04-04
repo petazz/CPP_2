@@ -10,7 +10,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string &target) : AForm("Shrub
 	std::cout << "ShrubberyCreationForm constructor called" << std::cout;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubberyCreationForm)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubberyCreationForm) : AForm(shrubberyCreationForm), target(shrubberyCreationForm.target)
 {
 	std::cout << "ShrubberyCreationForm constructor copy called" << std::endl;
 }
@@ -18,7 +18,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &shrubb
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &shrubberyCreationForm)
 {
 	std::cout << "ShrubberyCreationForm assigement called" << std::endl;
-	this->target = shrubberyCreationForm.target;
+	if(this != &shrubberyCreationForm)
+		*this = shrubberyCreationForm;
 	return *this;
 }
 
@@ -32,7 +33,29 @@ ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 	try
 	{
 		if (bureaucrat.getGrade > this->getSignGrade())
-			printf("hola");
+			throw	GradeTooLowException();
+		
+		if (!this->getIsSigned())
+			std::cout << "Is not signed" << std::endl;
+		else
+		{
+			std::ofstream file(this->target + "_shrubbery");
+			if (!file)
+				std::cerr << "Error opening file" << std::endl;
+	
+
+			file << "       _-_       " << std::endl;
+			file << "    /~~   ~~\\   " << std::endl;
+			file << " /~~         ~~\\ " << std::endl;
+			file << "{               }" << std::endl;
+			file << " \\  _-     -_  /" << std::endl;
+			file << "   ~  \\\\ //  ~ " << std::endl;
+			file << "_- -  | | _- _  " << std::endl;
+			file << "  _ - | |   -_  " << std::endl;
+			file << "      // \\      " << std::endl;
+
+			file.close();
+		}
 	}
 	catch(const std::exception& e)
 	{

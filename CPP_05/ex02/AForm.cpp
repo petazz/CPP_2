@@ -1,6 +1,6 @@
 #include "AForm.hpp"
 
-AForm::AForm() : _name("Default"), _signGrade(150), _executeGrade(150)
+AForm::AForm() : _name("Default"), _sign(false), _signGrade(150), _executeGrade(150)
 {
 	std::cout << "AForm default constructor called" << std::endl;
 }
@@ -72,6 +72,11 @@ int AForm::getSignGrade() const
 int AForm::getExecuteGrade() const
 {
 	return this->_executeGrade;
+}
+
+bool AForm::getIsSigned() const
+{
+	return this->_sign;
 }
 
 void AForm::beSigned(Bureaucrat &bureaucrat)
