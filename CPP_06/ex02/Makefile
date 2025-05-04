@@ -1,6 +1,6 @@
-TARGET = ScalarConverterer
+TARGET = Base
 
-SRCS = ScalarConverter.cpp main.cpp type.cpp convert.cpp
+SRCS = Base.cpp main.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 

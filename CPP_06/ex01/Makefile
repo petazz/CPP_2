@@ -1,6 +1,6 @@
-TARGET = ScalarConverterer
+TARGET = Serializer
 
-SRCS = ScalarConverter.cpp main.cpp type.cpp convert.cpp
+SRCS = Serializer.cpp main.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 
