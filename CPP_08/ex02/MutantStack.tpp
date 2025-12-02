@@ -1,21 +1,15 @@
 #include "MutantStack.hpp"
 
 template <typename T>
-MutantStack<T>::MutantStack() {
-	std::cout << "Constructor MutantStack" << std::endl;
+MutantStack<T>::MutantStack() : std::stack<T>() {
 }
 
-template<typename T>
-MutantStack<T>::MutantStack(const MutantStack &data)
-{
-	std::cout << "Constructor MutantStack Copy" << std::endl;
-	if(this != &data)
-		*this = data;
+template <typename T>
+MutantStack<T>::MutantStack(const MutantStack &other) : std::stack<T>(other) {
 }
 
 template <typename T>
 MutantStack<T> &MutantStack<T>::operator=(const MutantStack &other) {
-	std::cout << "MutantStack assignament operator" << std::endl;
     if (this != &other) {
         std::stack<T>::operator=(other);
     }
@@ -24,7 +18,6 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack &other) {
 
 template <typename T>
 MutantStack<T>::~MutantStack() {
-	std::cout << "Destructor MutantStack" << std::endl;
 }
 
 template <typename T>

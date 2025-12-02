@@ -1,4 +1,4 @@
-TARGET = rpn
+TARGET = RPN
 
 SRCS = main.cpp RPN.cpp
 
